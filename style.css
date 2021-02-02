@@ -1,0 +1,531 @@
+
+/*FINISHING NOTES
+Time took to complete: 5 days.
+Difficulty: Moderate.
+
+Uncompleted items:
+Animation for pupil moving around(reason: it would stop the floating animation when i tried to add animation to the pupil)
+lines under the text when you hover over the navigation bar at the top(reason: got lazy fix your self)
+pupil looking at the cursor for the eye at the top (reason: requires JS)
+proper text alignment for the footer text (reason: couldn't find out how to do it)
+
+
+Improvements Required:
+learn how to make responsive websites(next time start making a website from phone > ipad > computer
+learn more about positioning and position types
+
+
+Things learnt from this project: 
+FLOATING ANIMATION
+TRANSITIONS (WHEN YOU MOVE YOUR CURSOR OVER AN OBJECT AND IT PLAYS AN ANIMATION)
+GRADIENT TO TEXT
+*/ 
+
+
+
+
+
+
+
+
+body, html{
+    height: 100vh;
+}
+
+
+
+
+
+body{
+    background-color: #141414;
+}
+@font-face{
+    font-family:FuturaLightRegular;
+    src:url(FuturaLightRegular.otf);
+}
+@font-face{
+    font-family: RecoletaMedium;
+    src:url(Recoleta-Medium.otf);
+}
+
+
+*{
+    font-family: FuturaLightRegular;
+    margin: 0;
+    padding: 0;
+}
+
+.clr{
+    clear: both;
+}
+.wrapper{
+    width: 100%;
+}
+
+
+
+.header ul{
+    display: inline-flex;
+    list-style: none;
+    color: white;
+    position: fixed;
+    top: 0;
+    background-color:#141414;
+    padding: 38px 100%;
+    z-index: 10;
+}
+
+.header ul li{
+    font-size: 18px;
+    letter-spacing: 0.06em;
+    font-weight: 550;
+    cursor: pointer;
+}
+.header .Work{
+    left: 6%;
+    position: fixed;
+    transition: ease-in-out;
+    transition-property: font-size;
+    transition-duration: 0.3s;
+}
+.header .Work:hover{
+    color: #ef99ac;
+    font-size: 20px;
+}
+
+.header .About{
+    left: 14%;
+    position: fixed;
+    transition: ease-in-out;
+    transition-property: font-size;
+    transition-duration: 0.3s;
+}
+.header .About:hover{
+    color: #ef99ac;
+    font-size: 20px;
+}
+
+.header .Contact{
+    left: 22%; /*YOU NEED TO ADD POSTION TO ALL THE CHLDREN IN A PARENT THAT HAVE A FIXED POSTION*/
+    position: fixed;
+    transition: ease-in-out;
+    transition-property: font-size;
+    transition-duration: 0.3s;
+}
+.header .Contact:hover{
+    color: #ef99ac;
+    font-size: 20px;
+}
+.header .topeye{
+    right: 50%;
+    position: fixed;
+}
+
+.header .twitterlogo{
+    right: 15%;
+    position: fixed;
+}
+
+.header .scribblelogo{
+    right: 8%;
+    position: fixed;
+}
+
+
+.eye img{
+    top: 650px;
+    left: 60%;
+    position: relative;
+    z-index: 1;
+       
+}
+.eye :nth-child(2){
+    width: 300px;
+    height: 300px;
+    left: 48.2%;
+    top: 540px;
+    position: relative;
+}
+
+
+/*ADDS FLOATING EFFECT TO THE OBJECT*/
+.eye img{
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes floating {
+    0% { 
+        transform: translate(0,  0px); 
+    } 
+    50%  { 
+        transform: translate(0, 20px); 
+    } 
+    100%   { 
+        transform: translate(0, -0px); 
+    }   
+}
+
+
+
+/*IMPORTANT CODE ABOVE*/
+
+
+
+
+
+.intro .gradient-text h1, .eyeimageborder{
+    display: inline-flex;
+    position: relative;
+    color: white;
+    top: 150px;
+    left: 30%;
+    font-size: 75px;
+    /*THIS ADDS GRADIENT TO TEXT*/
+    background: -webkit-linear-gradient(360deg, #eccc81, #ef99ac, #b366fd, #9ed2ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /*ABOVE CODE IS IMPORTANT*/
+}
+
+.intro .gradient-text p{
+    color: white;
+    top: 150px;
+    left: 30%;
+    position: relative;
+    display: inline-flex;
+    font-size: 19px;
+}
+
+
+
+.intro .gradient-text h1, .gradient-text p, .eyeimageborder{
+    animation-name: gradientanimation;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+}
+
+@keyframes gradientanimation{
+    0%{
+        opacity: 0%;
+        top: 155px;
+    }
+    75%{
+        opacity: 75%;
+        top: 145px;
+    }
+    100%{
+        opacity: 100%;
+        top: 150px;
+    }
+}
+
+
+.intro .eyeimageborder img{
+    height: 900px;
+    width: 850px;
+    top: -440px;
+    left:98%;
+    position: relative;
+}
+
+
+
+/*MOBILE*/
+
+.mobile img{
+    width: 444px;
+    height: 900px;
+    left: 30%;
+    position: relative;
+    cursor: pointer;
+}
+
+.mobile img{
+    top: -30px;
+    background-color: #1c1c1c;
+    padding-left: 620px;
+    padding-right: 620px;
+    padding-top: 50px;
+    padding-bottom: 75px;
+    border-radius: 3%; 
+    transition-property: top, drop-shadow;
+    transition-duration: 1s;
+}
+
+
+
+
+.mobile img:hover{
+   top: -60px;
+   box-shadow: 5px 5px  #000000;
+}
+.mobile img{
+    animation: hover 1s linear;
+}
+
+@keyframes  hover{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.mobile h1{
+    color: white;
+}
+
+
+
+
+
+
+/*MOBILE END*/
+
+
+
+/*FORM*/
+
+.form img{
+    width: 600px;
+    length:1300px;
+    left: 30%;
+    position: relative; 
+    cursor: pointer;
+}
+
+.form img{
+    top: 50px;
+    margin-top: 125px;
+    background-color: #1c1c1c;
+    padding-left: 545px;
+    padding-right: 545px;
+    padding-top: 200px;
+    padding-bottom: 200px;
+    border-radius: 3%; 
+    transition-property: top, drop-shadow;
+    transition-duration: 1s;
+}
+
+.form img:hover{
+    top: 20px;
+    box-shadow: 5px 5px  #000000;
+}
+
+ .form img{
+     animation: hover 1s linear;
+ }
+ 
+ @keyframes  hover{
+     0%{
+         opacity: 0;
+     }
+     100%{
+         opacity: 1;
+     }
+ }
+/*FORM END*/
+
+
+
+
+/*BROWSE*/
+
+.browse img{
+    width: 900px;
+    height: 600px;
+    left: 30%;
+    position: relative; 
+    cursor: pointer;
+}
+
+.browse img{
+    top: 125px;
+    margin-top: 125px;
+    background-color: #1c1c1c;
+    padding-left: 400px;
+    padding-right: 400px;
+    padding-top: 200px;
+    padding-bottom: 200px;
+    border-radius: 3%;
+    transition-property: top, drop-shadow;
+    transition-duration: 1s;
+}
+
+.browse img:hover{
+    top: 90px;
+    box-shadow: 5px 5px  #000000;
+}
+
+.browse img{
+    animation: hover 1s linear;
+}
+
+@keyframes  hover{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+/*BROWSE END*/
+
+
+
+
+
+/*EMOJI*/
+.emoji img{
+    width: 900px;
+    height: 400px;
+    left: 30%;
+    position: relative; 
+    cursor: pointer;
+}
+
+.emoji img{
+    top: 125px;
+    margin-top: 125px;
+    background-color: #1c1c1c;
+    padding-left: 400px;
+    padding-right: 400px;
+    padding-top: 300px;
+    padding-bottom: 300px;
+    border-radius: 3%; 
+    transition-property: top, drop-shadow;
+    transition-duration: 1s;
+}
+.emoji img:hover{
+    top: 90px;
+    box-shadow: 5px 5px  #000000;
+}
+
+.emoji img{
+    animation: hover 1s linear;
+}
+
+@keyframes  hover{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+/*EMOJI END*/
+
+/*WEBIMAGE*/
+
+.webimage img{
+    width: 900px;
+    height: 525px;
+    left: 30%;
+    position: relative; 
+    cursor: pointer;
+}
+
+.webimage img{
+    top: 125px;
+    margin-top: 125px;
+    background-color: #1c1c1c;
+    padding-left: 400px;
+    padding-right: 400px;
+    padding-top: 300px;
+    padding-bottom: 300px;
+    border-radius: 3%; 
+    transition-property: top, drop-shadow;
+    transition-duration: 1s;
+}
+.webimage img:hover{
+    top: 90px;
+    box-shadow: 5px 5px  #000000;
+}
+/*WEBIMAGE END*/
+
+/*JEFFSUM*/
+
+.jeffsumimage img{
+    width: 575px;
+    height: 700px;
+    left: 30%;
+    position: relative;
+    cursor: pointer; 
+}
+
+.jeffsumimage img{
+    top: 125px;
+    margin-top: 125px;
+    background-color: #1c1c1c;
+    padding-left: 565px;
+    padding-right: 565px;
+    padding-top: 300px;
+    padding-bottom: 300px;
+    border-radius: 3%; 
+    transition-property: top, drop-shadow;
+    transition-duration: 1s;
+}
+.jeffsumimage img:hover{
+    top: 90px;
+    box-shadow: 5px 5px  #000000;
+}
+/*JEFFSUM END*/
+
+
+
+.footer h1{
+    font-family: RecoletaMedium;
+    background: -webkit-linear-gradient(0deg, #eccc81, #ef99ac, #b366fd, #9ed2ff 30%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 50px;
+}
+.footer h1{
+    top: 350px;
+    left: 40%;
+    position: relative;
+    
+}
+
+.footer p{
+    color: white;
+    top: 370px;
+    left: 40.5%;
+    position: relative;
+    font-size: 25px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#eccc81
+
+#ef99ac
+
+#b366fd
+
+#9ed2ff
